@@ -35,7 +35,7 @@
                                              class="ms-2">Customer</span> </a> </li>
                          <li> <a href="{{route('category.list')}}" class="nav-link text-white"> <i class="fa fa-cog"></i><span
                                         class="ms-2">Category</span> </a> </li>
-                         <li> <a href="#" class="nav-link text-white"> <i class="fa fa-bookmark"></i><span
+                         <li> <a href="{{route('order.list')}}" class="nav-link text-white"> <i class="fa fa-bookmark"></i><span
                                         class="ms-2">Order</span> </a> </li>
                     </ul>
                     <hr>

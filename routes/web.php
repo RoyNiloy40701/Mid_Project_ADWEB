@@ -7,6 +7,7 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\OrderController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -66,3 +67,7 @@ Route::get('/customer/list',[CustomerController::class,'list'])->name('customer.
 Route::get('/customer/details',[CustomerController::class,'details'])->name('customer.details');
 Route::get('/customer/delete/{id}',[CustomerController::class,'delete'])->name('customer.delete');
 
+//order route
+Route::get('/order/list',[OrderController::class,'list'])->name('order.list');
+Route::get('/order/details',[OrderController::class,'details'])->name('order.details');
+Route::get('/order/delete/{id}',[OrderController::class,'delete'])->name('order.delete');
