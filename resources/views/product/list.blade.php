@@ -56,7 +56,7 @@
 
                                         <td>{{$pd->PID}}</td>
                                         <td><a href="{{route('product.details',['id'=>encrypt($pd->PID)])}}"><img
-                                                       src="https://media.istockphoto.com/photos/confident-maori-man-in-a-studio-picture-id899827696?k=6&m=899827696&s=170667a&w=0&h=yvBvy9NoTxL5Yn0ueOwPj9hsD-dQqCEowGUt4cYmO1k="
+                                                       src="{{ asset('uploads/products/'.$pd->PPICTURE)}}"
                                                        class="avatar" alt="Avatar">{{$pd->PNAME}}</a></td>
                                         <td>04/10/2013</td>
                                         <td>{{$pd->PSHOP}}</td>

@@ -15,7 +15,7 @@
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-          <link href="{{asset('css/product/add.css')}}" rel="stylesheet" />
+          <link href="{{asset('css/employee/add.css')}}" rel="stylesheet" />
 
 
 
@@ -29,7 +29,7 @@
                          <div class="table-title">
                               <div class="row">
                                    <div class="col-xs-5">
-                                        <h2>Edit Product </h2>
+                                        <h2>Edit Employee</h2>
                                    </div>
                                    <div class="col">
 
@@ -52,8 +52,6 @@
                                         <label class="label" for="ename">Employee Name</label>
                                         <input name="ename" value="{{$em->ENAME}}" class="input-text js-input"
                                              type="text">
-
-
                                    </div>
 
 
@@ -94,6 +92,13 @@
                                         <label class="label" for="eschedule">Schedule</label>
                                         <input name="eschedule" value="{{$em->ESCHEDULE}}" class="input-text js-input"
                                              type="text">
+                                   </div>
+                                   <div class="form-field col-lg-6">
+                                        <label class="image-label" for="eimage">Image</label>
+                                        <input name="eimage" value="{{$em->EPICTURE}}"
+                                             class="input-text js-input form-control-file" type="file">
+                                        <img <img src="{{ asset('uploads/employees/'.$em->EPICTURE)}}" class="avatar"
+                                             alt="Avatar">
                                    </div>
 
 

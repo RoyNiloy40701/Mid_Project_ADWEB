@@ -7,7 +7,7 @@
           <meta charset="utf-8">
           <meta http-equiv="X-UA-Compatible" content="IE=edge">
           <meta name="viewport" content="width=device-width, initial-scale=1">
-          <title> Employee Table</title>
+          <title> CustomerTable</title>
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
           <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -16,9 +16,8 @@
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
           <link href="{{asset('css/employee/list.css')}}" rel="stylesheet" />
 
-
-
      </head>
+
 
      <body>
           <div class="container">
@@ -27,11 +26,10 @@
                          <div class="table-title">
                               <div class="row">
                                    <div class="col-xs-5">
-                                        <h2>Employee Table</h2>
+                                        <h2>Customer Table</h2>
                                    </div>
                                    <div class="col-xs-7">
-                                        <a href="{{route('employee.add')}}" class="btn btn-primary"><i
-                                                  class="material-icons">&#xE147;</i>
+                                        <a href="" class="btn btn-primary"><i class="material-icons">&#xE147;</i>
                                              <span>Add New User</span></a>
                                         <a href="#" class="btn btn-primary"><i class="material-icons">&#xE24D;</i>
                                              <span>Export to Excel</span></a>
@@ -50,24 +48,22 @@
                                    </tr>
                               </thead>
                               <tbody>
-                                   @foreach($employees as $em)
+                                   @foreach($customers as $cus)
                                    <tr>
-                                        <td>{{$em->EID}}</td>
-                                        <td><a href="{{route('employee.details',['id'=>encrypt($em->EID)])}}"><img
-                                                       src="{{ asset('uploads/employees/'.$em->EPICTURE)}}"
-                                                       class="avatar" alt="Avatar">{{$em->ENAME}}</a></td>
-                                        <td>{{$em->EEMAIL}}</td>
-                                        <td>{{$em->EPHONE}}</td>
-                                        <td>{{$em->EADDRESS}}</td>
+                                        <td>{{$cus->CID}}</td>
+                                        <td><a href=""><img
+                                                       src="https://media.istockphoto.com/photos/confident-maori-man-in-a-studio-picture-id899827696?k=6&m=899827696&s=170667a&w=0&h=yvBvy9NoTxL5Yn0ueOwPj9hsD-dQqCEowGUt4cYmO1k="
+                                                       class="avatar" alt="Avatar">{{$cus->CNAME}}</a></td>
+                                        <td>{{$cus->CEMAIL}}</td>
+                                        <td>{{$cus->CPHONE}}</td>
+                                        <td>{{$cus->CADDRESS}}</td>
 
                                         <td>
-                                             <a href="{{route('employee.details',['id'=>encrypt($em->EID)])}}"
+                                             <a href="{{route('customer.details',['id'=>encrypt($cus->CID)])}}"
                                                   class="view text-primary " title="View" data-toggle="tooltip"><i
                                                        class="material-icons">&#xE417;</i></a>
-                                             <a href="{{route('employee.edit',['id'=>encrypt($em->EID)])}}"
-                                                  class="edit text-warning " title="Edit" data-toggle="tooltip"><i
-                                                       class="material-icons">&#xE254;</i></a>
-                                             <a href="{{route('employee.delete',['id'=>encrypt($em->EID)])}}"
+
+                                             <a href="{{route('customer.delete',['id'=>encrypt($cus->CID)])}}"
                                                   class="delete" title="Delete" data-toggle="tooltip"><i
                                                        class="material-icons">&#xE872;</i></a>
                                         </td>

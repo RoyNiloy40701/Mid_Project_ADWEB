@@ -85,6 +85,15 @@
 
                                    </div>
 
+                                   <div class="form-field col-lg-6">
+                                        <label class="image-label" for="pimage">Image</label>
+                                        <input name="pimage" value="{{$pd->PPICTURE}}"
+                                             class="input-text js-input form-control-file" type="file">
+                                        <img src="{{ asset('uploads/products/'.$pd->PPICTURE)}}" class="avatar"
+                                             alt="Avatar">
+                                   </div>
+
+
 
                                    {{-- <div class="form-field col-lg-12">
                                    <label class="image-label" for="message">Image</label>

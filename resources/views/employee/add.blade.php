@@ -42,7 +42,7 @@
                          </div>
 
                          <section class="get-in-touch">
-                              <form action="{{route('employee.add')}}" method="post" class="contact-form row">
+                              <form action="{{route('employee.add')}}" method="post" class="contact-form row" enctype="multipart/form-data">
                                    {{@csrf_field()}}
                                    <div class="form-field col-lg-6">
                                         <label class="label" for="ename">Employee Name</label>
@@ -109,6 +109,14 @@
                                         <span>{{$message}}</span><br>
                                         @enderror
                                    </div>
+
+                                   <div class="form-field col-lg-6">
+                                        <label class="image-label" for="eimage">Image</label>
+                                         <input name="eimage" class="input-text js-input form-control-file" type="file" >
+                                         @error('eimage')
+                                         <span>{{$message}}</span><br>
+                                         @enderror
+                                      </div>
 
 
                                    {{-- <div class="form-field col-lg-12">

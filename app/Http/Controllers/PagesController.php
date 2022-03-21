@@ -11,4 +11,8 @@ class PagesController extends Controller
         return view('home.login');
       
     }
+    public function registration(){
+        return view('home.registration');
+      
+    }
 }

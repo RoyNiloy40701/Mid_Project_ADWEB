@@ -25,7 +25,8 @@ class ProductController extends Controller
                 'pshop'=>'required ',
                 'pdescription'=>'required',
                 'pbprice'=>'required',
-                'pstock'=>'required'
+                'pstock'=>'required',
+                'pimage'=>'required'
             ],
              [
                     'pname.required'=>'Please provide Product name',
@@ -33,6 +34,7 @@ class ProductController extends Controller
                     'pdescription.required'=>'Please provide Product Description',
                     'pbprice.required'=>'Please provide Basic Price',
                     'pstock.required'=>'Please provide Product Stock',
+                    'pimage.required'=>'Please provide Product image',
 
                     // 'uname.max'=>'Username should not exceed 15 characters',
                     // 'uname.min'=>'Username should contain at least 5 characters',
@@ -48,6 +50,15 @@ class ProductController extends Controller
             $pd->PDESCRIPTION = $req->pdescription;
             $pd->PBPRICE = $req->pbprice;
             $pd->PSTOCK = $req->pstock;
+            if($req->hasfile('pimage')){
+                $file=$req->file('pimage');
+                $extension=$file->getClientOriginalExtension();
+                $filename=time().'.'. $extension;
+                $file->move('uploads/products/',$filename);
+                $pd->PPICTURE = $filename;
+
+            }
+
             $pd->save();
 
             return redirect()->route('product.list');

@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CustomerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +23,7 @@ Route::get('/', function () {
 });
 
 Route::get('/login',[PagesController::class,'login'])->name('login');
+Route::get('/registration',[PagesController::class,'registration'])->name('registration');
 Route::get('/admin',[AdminController::class,'admin']);
 
 // employee route 
@@ -57,3 +59,10 @@ Route::get('/category/edit/{id}',[CategoryController::class,'edit'])->name('cate
 Route::post('/category/add',[CategoryController::class,'categoryAddSubmit'])->name('category.add');
 Route::post('/category/edit/{id}',[CategoryController::class,'categoryEditSubmit'])->name('category.update');
 Route::get('/category/delete/{id}',[CategoryController::class,'delete'])->name('category.delete');
+
+//custromer route
+Route::post('/customer/reg',[CustomerController::class,'registration'])->name('customer.reg');
+Route::get('/customer/list',[CustomerController::class,'list'])->name('customer.list');
+Route::get('/customer/details',[CustomerController::class,'details'])->name('customer.details');
+Route::get('/customer/delete/{id}',[CustomerController::class,'delete'])->name('customer.delete');
+

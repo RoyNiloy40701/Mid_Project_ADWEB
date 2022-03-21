@@ -277,6 +277,13 @@ table.table .avatar {
      width:200px;
      cursor: pointer;
    }
+  .avatar{
+     border-radius: 50%;
+     vertical-align: middle;
+     margin-right: 10px;
+     width:170px; 
+     height: 120px;
+  }
    .image-label{
    
 

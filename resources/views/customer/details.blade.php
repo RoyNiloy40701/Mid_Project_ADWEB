@@ -7,7 +7,7 @@
                integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
                crossorigin="anonymous">
           <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-          <link href="{{ asset('css/product/details.css') }}" rel="stylesheet" />
+          <link href="{{ asset('css/employee/details.css') }}" rel="stylesheet" />
 
      </head>
 
@@ -19,11 +19,11 @@
                          <div class="table-title">
                               <div class="row">
                                    <div class="col">
-                                        <h2> Product Details</h2>
+                                        <h2> Customer Details</h2>
                                    </div>
                                    <div class="col">
 
-                                        <a href="{{ url()->previous() }}" class="btn btn-danger"><i
+                                        <a href="{{ url()->previous() }}" class="btn btn-primary"><i
                                                   class="material-icons">&#xe5c4;</i>
                                              <span>Back</span></a>
 
@@ -37,11 +37,11 @@
                                         <div class="card">
                                              <div class="card-body">
                                                   <div class="d-flex flex-column align-items-center text-center">
-                                                       <img src="{{ asset('uploads/products/'.$pd->PPICTURE)}}"
-                                                            alt="" class="rounded-circle" width="150">
+                                                       <img src="{{ asset('uploads/customers/'.$cus->CPICTURE)}}"
+                                                            alt="Admin" class="rounded-circle" width="150">
                                                        <div class="mt-3">
-                                                            <h4> {{$pd->PNAME}}</h4>
-
+                                                            <h4>{{$cus->CNAME}}</h4>
+                                                            <p class="text-secondary mb-1">Employee</p>
 
                                                        </div>
                                                   </div>
@@ -54,57 +54,48 @@
                                              <div class="card-body">
                                                   <div class="row">
                                                        <div class="col-sm-3">
-                                                            <h6 class="mb-0"> Name</h6>
+                                                            <h6 class="mb-0">Full Name</h6>
                                                        </div>
                                                        <div class="col-sm-9 text-secondary">
-                                                            {{$pd->PNAME}}
+                                                            {{$cus->CNAME}}
                                                        </div>
                                                   </div>
                                                   <hr>
                                                   <div class="row">
                                                        <div class="col-sm-3">
-                                                            <h6 class="mb-0">Description</h6>
+                                                            <h6 class="mb-0">Email</h6>
                                                        </div>
                                                        <div class="col-sm-9 text-secondary">
-                                                            {{$pd->PDESCRIPTION}}
+                                                            {{$cus->CEMAIL}}
                                                        </div>
                                                   </div>
                                                   <hr>
                                                   <div class="row">
                                                        <div class="col-sm-3">
-                                                            <h6 class="mb-0">Shop</h6>
+                                                            <h6 class="mb-0">Phone</h6>
                                                        </div>
                                                        <div class="col-sm-9 text-secondary">
-                                                            {{$pd->PSHOP}}
-                                                       </div>
-                                                  </div>
-                                                  <hr>
-                                                  <div class="row">
-                                                       <div class="col-sm-3">
-                                                            <h6 class="mb-0">Price</h6>
-                                                       </div>
-                                                       <div class="col-sm-9 text-secondary">
-                                                            {{$pd->PBPRICE}}
-                                                       </div>
-                                                  </div>
-                                                  <hr>
-                                                  <div class="row">
-                                                       <div class="col-sm-3">
-                                                            <h6 class="mb-0">Stock</h6>
-                                                       </div>
-                                                       <div class="col-sm-9 text-secondary">
-                                                            {{$pd->PSTOCK}}
+                                                            {{$cus->CPHONE}}
                                                        </div>
                                                   </div>
                                                   <hr>
 
+                                                  <div class="row">
+                                                       <div class="col-sm-3">
+                                                            <h6 class="mb-0">Address</h6>
+                                                       </div>
+                                                       <div class="col-sm-9 text-secondary">
+                                                            {{$cus->CADDRESS}}
+                                                       </div>
+                                                  </div>
+                                                  <hr>
+                                               
                                                   <div class="row">
                                                        <div class="col-sm-12">
-                                                            <a class="btn btn-info " 
-                                                                 href={{route('product.edit',['id'=>encrypt($pd->PID)])}}">Edit</a>
+                                                            <a class="btn btn-info " target="__blank"
+                                                                 href="">Edit</a>
                                                        </div>
                                                   </div>
-
                                              </div>
                                         </div>
                                    </div>

@@ -43,7 +43,7 @@
                          <section class="get-in-touch">
                               {{-- action="{{route('productAddSubmit')}}"method="post" --}}
 
-                              <form action="{{route('product.add')}}" method="post" class="contact-form row">
+                              <form action="{{route('product.add')}}" method="post" class="contact-form row" enctype="multipart/form-data">
                                    {{@csrf_field()}}
                                    <div class="form-field col-lg-6">
                                         <label class="label" for="name">Product Name</label>
@@ -94,10 +94,14 @@
                                    </div>
 
 
-                                   {{-- <div class="form-field col-lg-12">
-                                   <label class="image-label" for="message">Image</label>
-                                    <input name="image" class="input-text js-input form-control-file" type="file" required>
-                                 </div> --}}
+                               <div class="form-field col-lg-6">
+                                   <label class="image-label" for="pimage">Image</label>
+                                    <input name="pimage" class="input-text js-input form-control-file" type="file" >
+                                    @error('pimage')
+                                    <span>{{$message}}</span><br>
+                                    @enderror
+                                 </div>
+                                 
                                    <div class="form-field  col-lg-12 mb-3">
                                         <input class="submit-btn" type="submit" value="Submit">
                                    </div>
