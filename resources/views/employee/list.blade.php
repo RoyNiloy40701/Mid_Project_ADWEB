@@ -32,9 +32,9 @@
                                    <div class="col-xs-7">
                                         <a href="{{route('employee.add')}}" class="btn btn-primary"><i
                                                   class="material-icons">&#xE147;</i>
-                                             <span>Add New User</span></a>
-                                        <a href="#" class="btn btn-primary"><i class="material-icons">&#xE24D;</i>
-                                             <span>Export to Excel</span></a>
+                                             <span>Add New </span></a>
+                                        <a href="{{route('employee.pdf')}}" class="btn btn-primary"><i class="material-icons">&#xE24D;</i>
+                                             <span>Export to PDF</span></a>
                                    </div>
                               </div>
                          </div>

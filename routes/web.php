@@ -29,7 +29,7 @@ Route::post('/login',[PagesController::class,'loginSubmit'])->name('login');
 Route::get('/logout',[PagesController::class,'logout'])->name('logout');
 
 Route::get('/registration',[PagesController::class,'registration'])->name('registration');
-Route::get('/manager',[ManagerController::class,'manager']);
+Route::get('/manager',[ManagerController::class,'manager'])->name('manager');
 
 // employee route 
 Route::get('/employee/list',[EmployeeController::class,'list'])->name('employee.list')->middleware('validManager');
@@ -78,8 +78,6 @@ Route::get('/order/delete/{id}',[OrderController::class,'delete'])->name('order.
 
 
 //routes for pdf 
-
-Route::get('/pdf/employee/list',[PDFController::class,'employeeList'])->name('employeePdf.list');
 Route::get('/pdf/employee/convert/',[PDFController::class,'pdfGenerate'])->name('employee.pdf');
 
 

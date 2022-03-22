@@ -10,12 +10,12 @@ class PDFController extends Controller
     //
     public function employeeList(){
         $employees=Employee::all();
-        return view('pdf.PDFemployee')->with ('employees',$employees);  
+        return view('pdf.PdfEmp')->with ('employees',$employees);  
 
     }
     public function pdfGenerate(){
         $employees=Employee::all();
-        $pdf_view=PDF::loadview('pdf.pdf_convert',compact('employees'))->setOptions(['defaultFont' => 'sans-serif']);
+        $pdf_view=PDF::loadview('pdf.PdfEmp',compact('employees'))->setOptions(['defaultFont' => 'sans-serif']);
         return $pdf_view->download('employee.pdf');
         
        

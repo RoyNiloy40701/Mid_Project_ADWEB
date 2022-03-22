@@ -32,7 +32,7 @@
                                    <div class="col-xs-7">
                                         
                                         <a href="#" class="btn btn-primary"><i class="material-icons">&#xE24D;</i>
-                                             <span>Export to Excel</span></a>
+                                             <span>Export to PDF</span></a>
                                    </div>
                               </div>
                          </div>

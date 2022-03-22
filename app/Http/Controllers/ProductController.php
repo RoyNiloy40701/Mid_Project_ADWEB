@@ -89,6 +89,7 @@ class ProductController extends Controller
             $pd->PDESCRIPTION = $req->pdescription;
             $pd->PBPRICE =$req->pbprice;
             $pd->PSTOCK = $req->pstock;
+            
             if($req->hasfile('pimage')){
                 $file=$req->file('pimage');
                 $extension=$file->getClientOriginalExtension();
@@ -97,7 +98,7 @@ class ProductController extends Controller
                 $pd->PPICTURE = $filename;
 
             }
-            $pd->save();
+            $pd->update();
             return redirect()->route('product.list');
 
      

@@ -23,10 +23,9 @@
                               class="bi me-2" width="40" height="32"> </svg> <span class="fs-4">BBBootstrap</span> </a>
                     <hr>
                     <ul class="nav nav-pills flex-column mb-auto">
-                         <li class="nav-item"> <a href="#" class="nav-link active" aria-current="page"> <i
+                         <li class="nav-item"> <a href="{{route('manager')}}" class="nav-link active" aria-current="page"> <i
                                         class="fa fa-home"></i><span class="ms-2">Home</span> </a> </li>
-                         <li> <a href="/login" class="nav-link text-white"> <i class="fa fa-dashboard"></i><span
-                                        class="ms-2">Dashboard</span> </a> </li>
+                      
                          <li> <a href="{{route('employee.list')}}" class="nav-link text-white"> <i class="fa fa-first-order"></i><span
                                         class="ms-2">Employee</span> </a> </li>
                          <li> <a href="{{route('product.list')}}" class="nav-link text-white"> <i class="fa fa-first-order"></i><span
