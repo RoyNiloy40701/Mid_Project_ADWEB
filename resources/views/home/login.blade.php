@@ -18,20 +18,34 @@
 							<div class="card-front">
 								<div class="center-wrap">
 									<div class="section text-center">
+										<form action="{{route('login')}}" method="POST" enctype="multipart/form-data">
+                                                       {{@csrf_field()}}
 										<h4 class="mb-4 pb-3">Log In</h4>
-										<div class="form-group">
-											<input type="email" name="logemail" class="form-style"
-												placeholder="Your Email" id="logemail" autocomplete="off">
-											<i class="input-icon uil uil-at"></i>
-										</div>
 										<div class="form-group mt-2">
-											<input type="password" name="logpass" class="form-style"
-												placeholder="Your Password" id="logpass" autocomplete="off">
-											<i class="input-icon uil uil-lock-alt"></i>
+											<input type="email" name="cusemail" class="form-style"
+												placeholder="Your Email" id="cusemail" value="{{old('cusemail')}}" autocomplete="off">
+											<i class="input-icon uil uil-at"></i>
+											@error('cusemail')
+											<span>{{$message}}</span><br>
+											@enderror
 										</div>
-										<a href="#" class="btn mt-4">submit</a>
-										<p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your
-												password?</a></p>
+
+										<div class="form-group mt-2">
+											<input type="password" name="cuspass" class="form-style"
+												placeholder="Your Password" id="cuspass" value="{{old('cuspass')}}" autocomplete="off">
+											<i class="input-icon uil uil-lock-alt"></i>
+											@error('cuspass')
+											<span>{{$message}}</span><br>
+											@enderror
+
+										</div>
+
+										<div class="">
+											<input class="btn mt-4" type="submit" value="Submit">
+										</div>	
+										<p class="mb-0 mt-4 text-center link">Forgot your
+												password?</p>
+										</form>
 									</div>
 								</div>
 							</div>

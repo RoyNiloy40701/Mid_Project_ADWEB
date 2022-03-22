@@ -2,12 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ManagerController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PDFController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,11 +25,14 @@ Route::get('/', function () {
 });
 
 Route::get('/login',[PagesController::class,'login'])->name('login');
+Route::post('/login',[PagesController::class,'loginSubmit'])->name('login');
+Route::get('/logout',[PagesController::class,'logout'])->name('logout');
+
 Route::get('/registration',[PagesController::class,'registration'])->name('registration');
-Route::get('/admin',[AdminController::class,'admin']);
+Route::get('/manager',[ManagerController::class,'manager']);
 
 // employee route 
-Route::get('/employee/list',[EmployeeController::class,'list'])->name('employee.list');
+Route::get('/employee/list',[EmployeeController::class,'list'])->name('employee.list')->middleware('validManager');
 Route::get('/employee/add',[EmployeeController::class,'add'])->name('employee.add');
 Route::get('/employee/details',[EmployeeController::class,'details'])->name('employee.details');
 Route::get('/employee/edit/{id}',[EmployeeController::class,'edit'])->name('employee.edit');
@@ -45,9 +49,9 @@ Route::get('/product/add',[ProductController::class,'add'])->name('product.add')
 Route::get('/product/details',[ProductController::class,'details'])->name('product.details');
 Route::get('/product/edit/{id}',[ProductController::class,'edit'])->name('product.edit');
 
-//produc route post
+//product route post
 Route::post('/product/add',[ProductController::class,'productAddSubmit'])->name('product.add');
-Route::post('/product/edit/{id}',[ProductController::class,'productEditSubmit'])->name('product.update');
+Route::post('/product/edit',[ProductController::class,'productEditSubmit'])->name('product.update');
 Route::get('/product/delete/{id}',[ProductController::class,'delete'])->name('product.delete');
 
 
@@ -71,3 +75,11 @@ Route::get('/customer/delete/{id}',[CustomerController::class,'delete'])->name('
 Route::get('/order/list',[OrderController::class,'list'])->name('order.list');
 Route::get('/order/details',[OrderController::class,'details'])->name('order.details');
 Route::get('/order/delete/{id}',[OrderController::class,'delete'])->name('order.delete');
+
+
+//routes for pdf 
+
+Route::get('/pdf/employee/list',[PDFController::class,'employeeList'])->name('employeePdf.list');
+Route::get('/pdf/employee/convert/',[PDFController::class,'pdfGenerate'])->name('employee.pdf');
+
+

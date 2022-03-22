@@ -82,11 +82,21 @@ class ProductController extends Controller
        
        
             $pd = Product::where('PID',decrypt($req->id))->first();
+           
+       
             $pd->PNAME = $req->pname;
             $pd->PSHOP= $req->pshop ;
             $pd->PDESCRIPTION = $req->pdescription;
             $pd->PBPRICE =$req->pbprice;
             $pd->PSTOCK = $req->pstock;
+            if($req->hasfile('pimage')){
+                $file=$req->file('pimage');
+                $extension=$file->getClientOriginalExtension();
+                $filename=time().'.'. $extension;
+                $file->move('uploads/products/',$filename);
+                $pd->PPICTURE = $filename;
+
+            }
             $pd->save();
             return redirect()->route('product.list');
 
