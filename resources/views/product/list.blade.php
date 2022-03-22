@@ -33,7 +33,7 @@
                                         <a href="{{route('product.add')}}" class="btn btn-primary"><i
                                                   class="material-icons">&#xE147;</i>
                                              <span>Add New</span></a>
-                                        <a href="#" class="btn btn-primary"><i class="material-icons">&#xE24D;</i>
+                                        <a href="{{route('product.pdf')}}" class="btn btn-primary"><i class="material-icons">&#xE24D;</i>
                                              <span>Export to PDF</span></a>
                                    </div>
                               </div>

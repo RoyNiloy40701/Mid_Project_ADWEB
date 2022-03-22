@@ -78,6 +78,7 @@ Route::get('/order/delete/{id}',[OrderController::class,'delete'])->name('order.
 
 
 //routes for pdf 
-Route::get('/pdf/employee/convert/',[PDFController::class,'pdfGenerate'])->name('employee.pdf');
+Route::get('/pdf/employee/convert/',[PDFController::class,'pdfEmpGenerate'])->name('employee.pdf');
+Route::get('/pdf/product/convert/',[PDFController::class,'pdfProductGenerate'])->name('product.pdf');
 
 
