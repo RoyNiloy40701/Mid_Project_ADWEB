@@ -41,8 +41,9 @@
                          <table class="table table-striped table-hover">
                               <thead>
                                    <tr>
-                                        <th>#</th>
+                                        <th>ID</th>
                                         <th>Name</th>
+                                        <th></th>
                                         <th></th>
 
 
@@ -58,6 +59,9 @@
 
                                         <td>
 
+                                             <a href="{{route('category.details',['id'=>encrypt($ca->CATEGORYID)])}}"
+                                                  class="view text-primary " title="View" data-toggle="tooltip"><i
+                                                       class="material-icons">&#xE417;</i></a>
                                              <a href="{{route('category.edit',['id'=>encrypt($ca->CATEGORYID )])}}"
                                                   class="edit text-warning " title="Edit" data-toggle="tooltip"><i
                                                        class="material-icons">&#xE254;</i></a>

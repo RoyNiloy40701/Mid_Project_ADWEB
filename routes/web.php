@@ -29,56 +29,57 @@ Route::post('/login',[PagesController::class,'loginSubmit'])->name('login');
 Route::get('/logout',[PagesController::class,'logout'])->name('logout');
 
 Route::get('/registration',[PagesController::class,'registration'])->name('registration');
-Route::get('/manager',[ManagerController::class,'manager'])->name('manager');
+Route::get('/manager',[ManagerController::class,'manager'])->name('manager')->middleware('validManager');
 
 // employee route 
 Route::get('/employee/list',[EmployeeController::class,'list'])->name('employee.list')->middleware('validManager');
-Route::get('/employee/add',[EmployeeController::class,'add'])->name('employee.add');
-Route::get('/employee/details',[EmployeeController::class,'details'])->name('employee.details');
-Route::get('/employee/edit/{id}',[EmployeeController::class,'edit'])->name('employee.edit');
+Route::get('/employee/add',[EmployeeController::class,'add'])->name('employee.add')->middleware('validManager');
+Route::get('/employee/details',[EmployeeController::class,'details'])->name('employee.details')->middleware('validManager');
+Route::get('/employee/edit/{id}',[EmployeeController::class,'edit'])->name('employee.edit')->middleware('validManager');
 
 // employee route  post
-Route::post('/employee/add',[EmployeeController::class,'employeeAddSubmit'])->name('employee.add');
-Route::post('/employee/edit/{id}',[EmployeeController::class,'employeeEditSubmit'])->name('employee.update');
-Route::get('/employee/delete/{id}',[EmployeeController::class,'delete'])->name('employee.delete');
+Route::post('/employee/add',[EmployeeController::class,'employeeAddSubmit'])->name('employee.add')->middleware('validManager');
+Route::post('/employee/edit/{id}',[EmployeeController::class,'employeeEditSubmit'])->name('employee.update')->middleware('validManager');
+Route::get('/employee/delete/{id}',[EmployeeController::class,'delete'])->name('employee.delete')->middleware('validManager');
 
 
 // product route
-Route::get('/product/list',[ProductController::class,'list'])->name('product.list');
-Route::get('/product/add',[ProductController::class,'add'])->name('product.add');
-Route::get('/product/details',[ProductController::class,'details'])->name('product.details');
-Route::get('/product/edit/{id}',[ProductController::class,'edit'])->name('product.edit');
+Route::get('/product/list',[ProductController::class,'list'])->name('product.list')->middleware('validManager');
+Route::get('/product/add',[ProductController::class,'add'])->name('product.add')->middleware('validManager');
+Route::get('/product/details/{id}',[ProductController::class,'details'])->name('product.details')->middleware('validManager');
+Route::get('/product/edit/{id}',[ProductController::class,'edit'])->name('product.edit')->middleware('validManager');
 
 //product route post
-Route::post('/product/add',[ProductController::class,'productAddSubmit'])->name('product.add');
-Route::post('/product/edit',[ProductController::class,'productEditSubmit'])->name('product.update');
-Route::get('/product/delete/{id}',[ProductController::class,'delete'])->name('product.delete');
+Route::post('/product/add',[ProductController::class,'productAddSubmit'])->name('product.add')->middleware('validManager');
+Route::post('/product/edit',[ProductController::class,'productEditSubmit'])->name('product.update')->middleware('validManager');
+Route::get('/product/delete/{id}',[ProductController::class,'delete'])->name('product.delete')->middleware('validManager');
 
 
 // category route
-Route::get('/category/list',[CategoryController::class,'list'])->name('category.list');
-Route::get('/category/add',[CategoryController::class,'add'])->name('category.add');
-Route::get('/category/edit/{id}',[CategoryController::class,'edit'])->name('category.edit');
+Route::get('/category/list',[CategoryController::class,'list'])->name('category.list')->middleware('validManager');
+Route::get('/category/add',[CategoryController::class,'add'])->name('category.add')->middleware('validManager');
+Route::get('/category/edit/{id}',[CategoryController::class,'edit'])->name('category.edit')->middleware('validManager');
 
 //category route post
-Route::post('/category/add',[CategoryController::class,'categoryAddSubmit'])->name('category.add');
-Route::post('/category/edit/{id}',[CategoryController::class,'categoryEditSubmit'])->name('category.update');
-Route::get('/category/delete/{id}',[CategoryController::class,'delete'])->name('category.delete');
+Route::post('/category/add',[CategoryController::class,'categoryAddSubmit'])->name('category.add')->middleware('validManager');
+Route::post('/category/edit/{id}',[CategoryController::class,'categoryEditSubmit'])->name('category.update')->middleware('validManager');
+Route::get('/category/delete/{id}',[CategoryController::class,'delete'])->name('category.delete')->middleware('validManager');
+Route::get('/category/details/{id}',[CategoryController::class,'details'])->name('category.details')->middleware('validManager');
 
 //custromer route
-Route::post('/customer/reg',[CustomerController::class,'registration'])->name('customer.reg');
-Route::get('/customer/list',[CustomerController::class,'list'])->name('customer.list');
-Route::get('/customer/details',[CustomerController::class,'details'])->name('customer.details');
-Route::get('/customer/delete/{id}',[CustomerController::class,'delete'])->name('customer.delete');
+Route::post('/customer/reg',[CustomerController::class,'registration'])->name('customer.reg')->middleware('validManager');
+Route::get('/customer/list',[CustomerController::class,'list'])->name('customer.list')->middleware('validManager');
+Route::get('/customer/details/{id}',[CustomerController::class,'details'])->name('customer.details')->middleware('validManager');
+Route::get('/customer/delete/{id}',[CustomerController::class,'delete'])->name('customer.delete')->middleware('validManager');
 
 //order route
-Route::get('/order/list',[OrderController::class,'list'])->name('order.list');
-Route::get('/order/details',[OrderController::class,'details'])->name('order.details');
-Route::get('/order/delete/{id}',[OrderController::class,'delete'])->name('order.delete');
+Route::get('/order/list',[OrderController::class,'list'])->name('order.list')->middleware('validManager');
+Route::get('/order/details',[OrderController::class,'details'])->name('order.details')->middleware('validManager');
+Route::get('/order/delete/{id}',[OrderController::class,'delete'])->name('order.delete')->middleware('validManager');
 
 
 //routes for pdf 
-Route::get('/pdf/employee/convert/',[PDFController::class,'pdfEmpGenerate'])->name('employee.pdf');
-Route::get('/pdf/product/convert/',[PDFController::class,'pdfProductGenerate'])->name('product.pdf');
+Route::get('/pdf/employee/convert/',[PDFController::class,'pdfEmpGenerate'])->name('employee.pdf')->middleware('validManager');
+Route::get('/pdf/product/convert/',[PDFController::class,'pdfProductGenerate'])->name('product.pdf')->middleware('validManager');
 
 

@@ -11,4 +11,8 @@ class Product extends Model
 
     public $timestamps=false;
     protected $primaryKey = 'PID';
+    public function category()
+    {
+        return $this->belongsTo(Category::class,'PCATEGORYID');
+    }
 }

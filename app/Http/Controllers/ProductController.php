@@ -68,8 +68,22 @@ class ProductController extends Controller
 
     public function details(Request $req){
         $pd = Product::where('PID',decrypt($req->id))->first();
-        return view('product.details')->with('pd',$pd);
+        if($pd){
+            $pd->category = $pd->category; 
+       
+            return view('product.details')->with('pd',$pd);  
+        }
+       
    
+    }
+    public function get(Request $req){
+        $course = Course::where('id',$req->id)->first();
+        if($course){
+            $course->department = $course->department;
+            return response()->json($course,200);
+        }
+        return response()->json(["msg"=>"notfound"],404);
+        
     }
 
     public function edit(Request $req){

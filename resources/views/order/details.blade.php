@@ -33,22 +33,7 @@
 
                          <div class="main-body">
                               <div class="row gutters-sm">
-                                   {{-- <div class="col-md-4 mb-3">
-                                        <div class="card">
-                                             <div class="card-body">
-                                                  <div class="d-flex flex-column align-items-center text-center">
-                                                       <img src="{{ asset('uploads/employees/'.$em->EPICTURE)}}"
-                                                            alt="Admin" class="rounded-circle" width="150">
-                                                       <div class="mt-3">
-                                                            <h4>{{$em->ENAME}}</h4>
-                                                            <p class="text-secondary mb-1">Employee</p>
-
-                                                       </div>
-                                                  </div>
-                                             </div>
-                                        </div>
-
-                                   </div> --}}
+                                  
                                    <div class="col-md-8">
                                         <div class="card mb-3">
                                              <div class="card-body">
@@ -56,8 +41,35 @@
                                                        <div class="col-sm-3">
                                                             <h6 class="mb-0">Full Name</h6>
                                                        </div>
-                                                       <div class="col-sm-9 text-secondary">
-                                                            {{$od->CID}}
+                                                       <div class="col-sm-9 text">
+                                                            {{$od->customer->CNAME}}
+                                                       </div>
+                                                  </div>
+                                                  <hr>
+                                                  <div class="row ">
+                                                       <div class="col-sm-3">
+                                                            <h6 class="mb-0">Customer Email</h6>
+                                                       </div>
+                                                       <div class="col-sm-9 text">
+                                                            {{$od->customer->CEMAIL}}
+                                                       </div>
+                                                  </div>
+                                                  <hr>
+                                                  <div class="row">
+                                                       <div class="col-sm-3">
+                                                            <h6 class="mb-0">Customer Phone</h6>
+                                                       </div>
+                                                       <div class="col-sm-9 text">
+                                                            {{$od->customer->CPHONE}}
+                                                       </div>
+                                                  </div>
+                                                  <hr>
+                                                  <div class="row">
+                                                       <div class="col-sm-3">
+                                                            <h6 class="mb-0">Order Item</h6>
+                                                       </div>
+                                                       <div class="col-sm-9 text">
+                                                            {{$od->ORDERITEM}}
                                                        </div>
                                                   </div>
                                                   <hr>
@@ -65,7 +77,7 @@
                                                        <div class="col-sm-3">
                                                             <h6 class="mb-0">Status</h6>
                                                        </div>
-                                                       <div class="col-sm-9 text-secondary">
+                                                       <div class="col-sm-9 text">
                                                             {{$od->OSTATUS}}
                                                        </div>
                                                   </div>
@@ -74,7 +86,7 @@
                                                        <div class="col-sm-3">
                                                             <h6 class="mb-0">Total Cost</h6>
                                                        </div>
-                                                       <div class="col-sm-9 text-secondary">
+                                                       <div class="col-sm-9 text">
                                                             {{$od->OTOTALCOST}}
                                                        </div>
                                                   </div>
@@ -84,7 +96,7 @@
                                                        <div class="col-sm-3">
                                                             <h6 class="mb-0">Order Date</h6>
                                                        </div>
-                                                       <div class="col-sm-9 text-secondary">
+                                                       <div class="col-sm-9 text">
                                                             {{$od->ODATE}}
                                                        </div>
                                                   </div>
@@ -93,18 +105,13 @@
                                                        <div class="col-sm-3">
                                                             <h6 class="mb-0">Payment Method</h6>
                                                        </div>
-                                                       <div class="col-sm-9 text-secondary">
+                                                       <div class="col-sm-9 text">
                                                             {{$od->OPAYMETHOD}}
                                                        </div>
                                                   </div>
                                                   <hr>
                                                 
-                                                  {{-- <div class="row">
-                                                       <div class="col-sm-12">
-                                                            <a class="btn btn-info " 
-                                                                 href="{{route('employee.edit',['id'=>encrypt($em->EID)])}}">Edit</a>
-                                                       </div>
-                                                  </div> --}}
+                                              
                                              </div>
                                         </div>
                                    </div>

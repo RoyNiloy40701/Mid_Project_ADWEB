@@ -38,7 +38,7 @@ class PagesController extends Controller
         if($empo){
             $req->session()->put('user', $empo->MNAME);
             
-            return redirect()->route('employee.list');
+            return redirect()->route('manager');
         }
 
     }

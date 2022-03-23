@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
+
 class CategoryController extends Controller
 {
     //
@@ -65,6 +66,20 @@ class CategoryController extends Controller
 
  
 
+    }
+    public function details(Request $req){
+        $category = Category::where('CATEGORYID',decrypt($req->id))->first();
+        if($category){
+            
+         $category->products = $category->products;   
+         
+       
+        return view('category.details')->with('category',$category);
+        }
+       
+
+       
+   
     }
 
     

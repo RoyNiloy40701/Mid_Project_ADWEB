@@ -14,6 +14,13 @@ class OrderController extends Controller
     public function details(Request $req){
       
         $od = Order::where('OID',decrypt($req->id))->first();
-        return view('order.details')->with('od',$od);
+        if($od){
+            $od->customer = $od->customer; 
+           
+            return view('order.details')->with('od',$od);
+       
+              
+        }
+     
     }
 }
