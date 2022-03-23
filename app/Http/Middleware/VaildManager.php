@@ -16,7 +16,7 @@ class VaildManager
      */
     public function handle(Request $request, Closure $next)
     {
-        if($request->session()->get('user')){
+        if($request->session()->get('mname')){
 
             return $next($request);
         }

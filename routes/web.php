@@ -24,6 +24,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//login route
 Route::get('/login',[PagesController::class,'login'])->name('login');
 Route::post('/login',[PagesController::class,'loginSubmit'])->name('login');
 Route::get('/logout',[PagesController::class,'logout'])->name('logout');

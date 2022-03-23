@@ -35,15 +35,18 @@ class PagesController extends Controller
        
         $empo = Manager::where('MEMAIL', $req->cusemail)->first();
        
+     
+       
         if($empo){
-            $req->session()->put('user', $empo->MNAME);
+            $req->session()->put('mname', $empo->MNAME ,'mid',$empo->MID);
             
             return redirect()->route('manager');
         }
 
     }
     public function logout(){
-        session()->forget('user');
+        session()->forget('mname');
+        return view('home.login');
     }
     public function registration(){
         return view('home.registration');
