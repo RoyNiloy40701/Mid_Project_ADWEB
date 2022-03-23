@@ -26,12 +26,12 @@ class CustomerController extends Controller
     }
     public function orderDetails(Request $req){
       
-        $oders = Customer::where('CID',decrypt($req->id))->first();
-        if($oders){
-            $oders->orderList = $oders->orderList; 
+        $orders = Customer::where('CID',decrypt($req->id))->first();
+        if($orders){
+            $orders->orderList = $orders->orderList; 
          
            
-            return view('customer.customerOrder')->with('orders',$oders);
+            return view('customer.customerOrder')->with('orders',$orders);
        
               
         }

@@ -44,8 +44,9 @@
                         </ul>
                         <ul class="navbar-nav  ">
                             <li class="nav-item ">
-                                <a class="nav-link active d-flex justify-content-end" href="{{route('login')}}">Login</a>
-                                
+                                <a class="nav-link active d-flex justify-content-end"
+                                    href="{{route('login')}}">Login</a>
+
                             </li>
 
                         </ul>

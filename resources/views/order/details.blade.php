@@ -23,8 +23,9 @@
                                    </div>
                                    <div class="col">
                                         <div class="col-xs-7">
-                                        
-                                             <a href="{{route('orderDetails.pdf',['id'=>encrypt($od->OID)])}}" class="btn btn-primary"><i class="material-icons">&#xE24D;</i>
+
+                                             <a href="{{route('orderDetails.pdf',['id'=>encrypt($od->OID)])}}"
+                                                  class="btn btn-primary"><i class="material-icons">&#xE24D;</i>
                                                   <span>Export to PDF</span></a>
                                         </div>
 
@@ -38,7 +39,7 @@
 
                          <div class="main-body">
                               <div class="row gutters-sm">
-                                  
+
                                    <div class="col-md-8">
                                         <div class="card mb-3">
                                              <div class="card-body">
@@ -115,8 +116,8 @@
                                                        </div>
                                                   </div>
                                                   <hr>
-                                                
-                                              
+
+
                                              </div>
                                         </div>
                                    </div>

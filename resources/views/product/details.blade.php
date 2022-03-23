@@ -37,8 +37,8 @@
                                         <div class="card">
                                              <div class="card-body">
                                                   <div class="d-flex flex-column align-items-center text-center">
-                                                       <img src="{{ asset('uploads/products/'.$pd->PPICTURE)}}"
-                                                            alt="" class="rounded-circle" width="150">
+                                                       <img src="{{ asset('uploads/products/'.$pd->PPICTURE)}}" alt=""
+                                                            class="rounded-circle" width="150">
                                                        <div class="mt-3">
                                                             <h4> {{$pd->PNAME}}</h4>
 
@@ -109,7 +109,7 @@
 
                                                   <div class="row">
                                                        <div class="col-sm-12">
-                                                            <a class="btn btn-info " 
+                                                            <a class="btn btn-info "
                                                                  href={{route('product.edit',['id'=>encrypt($pd->PID)])}}">Edit</a>
                                                        </div>
                                                   </div>

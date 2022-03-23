@@ -1,4 +1,3 @@
-
 <html>
 
      <head>
@@ -8,141 +7,148 @@
           <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
           <link href="{{ asset('css/order/details.css') }}" rel="stylesheet" />
           <style>
-               body{
-    
-    color: #1a202c;
-    text-align: left;
-    background-color: #e2e8f0;    
-}
-.main-body {
-   
-    width: 1000px;
-    margin-top:15px;
+               body {
+
+                    color: #1a202c;
+                    text-align: left;
+                    background-color: #e2e8f0;
+               }
+
+               .main-body {
+
+                    width: 1000px;
+                    margin-top: 15px;
 
 
-}
-.card {
-    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
-}
+               }
 
-.card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 0 solid rgba(0,0,0,.125);
-    border-radius: .25rem;
-}
+               .card {
+                    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
+               }
 
-.card-body {
-    flex: 1 1 auto;
-    min-height: 1px;
-    padding: 1rem;
-}
+               .card {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    min-width: 0;
+                    word-wrap: break-word;
+                    background-color: #fff;
+                    background-clip: border-box;
+                    border: 0 solid rgba(0, 0, 0, .125);
+                    border-radius: .25rem;
+               }
 
-.gutters-sm {
-    margin-right: -8px;
-    margin-left: -8px;
-}
+               .card-body {
+                    flex: 1 1 auto;
+                    min-height: 1px;
+                    padding: 1rem;
+               }
 
-.gutters-sm>.col, .gutters-sm>[class*=col-] {
-    padding-right: 8px;
-    padding-left: 8px;
-}
-.mb-3, .my-3 {
-    margin-bottom: 1rem!important;
-}
+               .gutters-sm {
+                    margin-right: -8px;
+                    margin-left: -8px;
+               }
 
-.bg-gray-300 {
-    background-color: #e2e8f0;
-}
-.h-100 {
-    height: 100%!important;
-}
-.shadow-none {
-    box-shadow: none!important;
-}
-.table-res {
-    margin-top: 5px;
-}
+               .gutters-sm>.col,
+               .gutters-sm>[class*=col-] {
+                    padding-right: 8px;
+                    padding-left: 8px;
+               }
 
+               .mb-3,
+               .my-3 {
+                    margin-bottom: 1rem !important;
+               }
 
+               .bg-gray-300 {
+                    background-color: #e2e8f0;
+               }
 
+               .h-100 {
+                    height: 100% !important;
+               }
 
+               .shadow-none {
+                    box-shadow: none !important;
+               }
 
-.table-wrapper {
-    min-width: 1050px;
-    background: #fff;
-    padding: 20px 25px;
-    border-radius: 3px;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-}
-
-.table-title {
-    padding-bottom: 15px;
-    background: #6f1a10;
-    color: #fff;
-    padding: 16px 30px;
-    margin: -20px -25px 10px;
-    border-radius: 3px 3px 0 0;
-}
-
-.table-title h2 {
-    margin: 5px 0 0;
-    font-size: 24px;
-}
-
-.table-title .btn {
-    color: #ffffff;
-    float: right;
-    font-size: 13px;
-    background: #BB2D3B;
-    border: none;
-    min-width: 50px;
-    border-radius: 4px;
-    border: none;
-    outline: none !important;
-    margin-left: 10px;
-}
-
-.table-title .btn:hover,
-.table-title .btn:focus {
-    color: #000000;
-    background: #ffffff;
-}
-
-.table-title .btn i {
-    float: left;
-    font-size: 21px;
-    margin-right: 5px;
-}
-
-.table-title .btn span {
-    float: left;
-    margin-top: 2px;
-}
+               .table-res {
+                    margin-top: 5px;
+               }
 
 
 
-.text-success {
-    color: #10c469;
-}
 
-.text-info {
-    color: #62c9e8;
-}
 
-.text-warning {
-    color: #FFC107;
-}
+               .table-wrapper {
+                    min-width: 1050px;
+                    background: #fff;
+                    padding: 20px 25px;
+                    border-radius: 3px;
+                    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+               }
 
-.text-danger {
-    color: #ff5b5b;
-}
+               .table-title {
+                    padding-bottom: 15px;
+                    background: #6f1a10;
+                    color: #fff;
+                    padding: 16px 30px;
+                    margin: -20px -25px 10px;
+                    border-radius: 3px 3px 0 0;
+               }
 
+               .table-title h2 {
+                    margin: 5px 0 0;
+                    font-size: 24px;
+               }
+
+               .table-title .btn {
+                    color: #ffffff;
+                    float: right;
+                    font-size: 13px;
+                    background: #BB2D3B;
+                    border: none;
+                    min-width: 50px;
+                    border-radius: 4px;
+                    border: none;
+                    outline: none !important;
+                    margin-left: 10px;
+               }
+
+               .table-title .btn:hover,
+               .table-title .btn:focus {
+                    color: #000000;
+                    background: #ffffff;
+               }
+
+               .table-title .btn i {
+                    float: left;
+                    font-size: 21px;
+                    margin-right: 5px;
+               }
+
+               .table-title .btn span {
+                    float: left;
+                    margin-top: 2px;
+               }
+
+
+
+               .text-success {
+                    color: #10c469;
+               }
+
+               .text-info {
+                    color: #62c9e8;
+               }
+
+               .text-warning {
+                    color: #FFC107;
+               }
+
+               .text-danger {
+                    color: #ff5b5b;
+               }
           </style>
 
      </head>
@@ -157,13 +163,13 @@
                                    <div class="col">
                                         <h2> Order Details</h2>
                                    </div>
-                                  
+
                               </div>
                          </div>
 
                          <div class="main-body">
                               <div class="row gutters-sm">
-                                  
+
                                    <div class="col-md-8">
                                         <div class="card mb-3">
                                              <div class="card-body">
@@ -240,8 +246,8 @@
                                                        </div>
                                                   </div>
                                                   <hr>
-                                                
-                                              
+
+
                                              </div>
                                         </div>
                                    </div>

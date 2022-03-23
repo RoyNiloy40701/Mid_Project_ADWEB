@@ -109,7 +109,7 @@
                                                   <hr>
                                                   <div class="row">
                                                        <div class="col-sm-12">
-                                                            <a class="btn btn-info " 
+                                                            <a class="btn btn-info "
                                                                  href="{{route('employee.edit',['id'=>encrypt($em->EID)])}}">Edit</a>
                                                        </div>
                                                   </div>

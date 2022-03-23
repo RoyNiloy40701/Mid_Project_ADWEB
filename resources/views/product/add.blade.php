@@ -43,7 +43,8 @@
                          <section class="get-in-touch">
                               {{-- action="{{route('productAddSubmit')}}"method="post" --}}
 
-                              <form action="{{route('product.add')}}" method="post" class="contact-form row" enctype="multipart/form-data">
+                              <form action="{{route('product.add')}}" method="post" class="contact-form row"
+                                   enctype="multipart/form-data">
                                    {{@csrf_field()}}
                                    <div class="form-field col-lg-6">
                                         <label class="label" for="name">Product Name</label>
@@ -65,7 +66,7 @@
                                         <span>{{$message}}</span><br>
                                         @enderror
                                    </div>
-                               
+
                                    <div class="form-field col-lg-6 ">
                                         <label class="label" for="pdescription">Product Description</label>
                                         <input name="pdescription" value="{{old('pdescription')}}"
@@ -95,34 +96,34 @@
                                    </div>
                                    {{-- <div class="form-field col-lg-6 ">
                                         <label class="label" for="pcat">Product Category</label>
-                                        <select name="pcat" value="{{old('pcat')}}"> 
-                                             foreach() 
-                                             <option value = "BMW"> BMW   
-                                             </option>  
-                                              
-                                              
-                                             </select> 
-                                   </div> --}}
+                                        <select name="pcat" value="{{old('pcat')}}">
+                                   foreach()
+                                   <option value="BMW"> BMW
+                                   </option>
 
 
-                               <div class="form-field col-lg-6">
-                                   <label class="image-label" for="pimage">Image</label>
-                                    <input name="pimage" class="input-text js-input form-control-file" type="file" >
-                                    @error('pimage')
-                                    <span>{{$message}}</span><br>
-                                    @enderror
-                                 </div>
-                                 
-                                   <div class="form-field  col-lg-12 mb-3">
-                                        <input class="submit-btn" type="submit" value="Submit">
-                                   </div>
+                                   </select>
+                    </div> --}}
 
-                              </form>
-                         </section>
 
+                    <div class="form-field col-lg-6">
+                         <label class="image-label" for="pimage">Image</label>
+                         <input name="pimage" class="input-text js-input form-control-file" type="file">
+                         @error('pimage')
+                         <span>{{$message}}</span><br>
+                         @enderror
                     </div>
 
+                    <div class="form-field  col-lg-12 mb-3">
+                         <input class="submit-btn" type="submit" value="Submit">
+                    </div>
+
+                    </form>
+                    </section>
+
                </div>
+
+          </div>
 
           </div>
      </body>

@@ -30,7 +30,7 @@
                                         <h2>Order Table</h2>
                                    </div>
                                    <div class="col-xs-7">
-                                        
+
                                         <a href="#" class="btn btn-primary"><i class="material-icons">&#xE24D;</i>
                                              <span>Export to PDF</span></a>
                                    </div>
@@ -44,7 +44,8 @@
                                         <th>Order Item</th>
                                         <th>Status</th>
                                         <th>Order Date</th>
-                             
+                                        <th></th>
+
 
                                    </tr>
                               </thead>
@@ -53,12 +54,14 @@
                                    <tr>
                                         <td>{{$od->OID}}</td>
                                         <td>{{$od->CID}}</td>
-                                        <td><a href="{{route('order.details',['id'=>encrypt($od->OID)])}}">{{$od->ORDERITEM}}</a></td>
+                                        <td><a
+                                                  href="{{route('order.details',['id'=>encrypt($od->OID)])}}">{{$od->ORDERITEM}}</a>
+                                        </td>
                                         <td>{{$od->OSTATUS}}</td>
                                         <td>{{$od->ODATE}}</td>
-                                       
 
-                                        
+
+
                                    </tr>
                                    @endforeach
 

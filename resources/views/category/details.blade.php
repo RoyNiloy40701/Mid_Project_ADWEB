@@ -30,8 +30,8 @@
                                         <h2>Category {{$category->CATEGORYNAME}}</h2>
                                    </div>
                                    <div class="col-xs-7">
-                                      
-                                             
+
+
                                         <a href="#" class="btn btn-primary"><i class="material-icons">&#xE24D;</i>
                                              <span>Export to Excel</span></a>
                                    </div>
@@ -56,7 +56,7 @@
                                         <td><a href="{{route('product.details',['id'=>encrypt($ca->PID)])}}"><img
                                                        src="{{ asset('uploads/products/'.$ca->PPICTURE)}}"
                                                        class="avatar" alt="Avatar">{{$ca->PNAME}}</a></td>
-                                     
+
                                         <td>{{$ca->PSHOP}}</td>
                                         <td>{{$ca->PBPRICE}}</td>
                                         <td>{{$ca->PSTOCK}}</td>

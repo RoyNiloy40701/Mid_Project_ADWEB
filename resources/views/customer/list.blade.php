@@ -29,7 +29,7 @@
                                         <h2>Customer Table</h2>
                                    </div>
                                    <div class="col-xs-7">
-                                        
+
                                         <a href="#" class="btn btn-primary"><i class="material-icons">&#xE24D;</i>
                                              <span>Export to Excel</span></a>
                                    </div>
