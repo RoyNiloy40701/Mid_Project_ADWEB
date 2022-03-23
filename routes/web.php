@@ -75,12 +75,13 @@ Route::get('/customer/delete/{id}',[CustomerController::class,'delete'])->name('
 
 //order route
 Route::get('/order/list',[OrderController::class,'list'])->name('order.list')->middleware('validManager');
-Route::get('/order/details',[OrderController::class,'details'])->name('order.details')->middleware('validManager');
+Route::get('/order/details/{id}',[OrderController::class,'details'])->name('order.details')->middleware('validManager');
 Route::get('/order/delete/{id}',[OrderController::class,'delete'])->name('order.delete')->middleware('validManager');
 
 
 //routes for pdf 
 Route::get('/pdf/employee/convert/',[PDFController::class,'pdfEmpGenerate'])->name('employee.pdf')->middleware('validManager');
 Route::get('/pdf/product/convert/',[PDFController::class,'pdfProductGenerate'])->name('product.pdf')->middleware('validManager');
+Route::get('/pdf/orderdetails/convert/{id}',[PDFController::class,'pdfOrderGenerate'])->name('orderDetails.pdf')->middleware('validManager');
 
 
