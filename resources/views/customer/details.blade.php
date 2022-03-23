@@ -92,8 +92,8 @@
                                                
                                                   <div class="row">
                                                        <div class="col-sm-12">
-                                                            <a class="btn btn-info " target="__blank"
-                                                                 href="">Edit</a>
+                                                            <a class="btn btn-info " 
+                                                            href="{{route('customer.orderDetails',['id'=>encrypt($cus->CID)])}}">Order Details</a>
                                                        </div>
                                                   </div>
                                              </div>

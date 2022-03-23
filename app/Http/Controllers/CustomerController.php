@@ -24,6 +24,19 @@ class CustomerController extends Controller
           return redirect()->route('customer.list');
 
     }
+    public function orderDetails(Request $req){
+      
+        $oders = Customer::where('CID',decrypt($req->id))->first();
+        if($oders){
+            $oders->orderList = $oders->orderList; 
+         
+           
+            return view('customer.customerOrder')->with('orders',$oders);
+       
+              
+        }
+     
+    }
   
     public function registration(Request $req){
 

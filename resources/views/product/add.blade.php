@@ -93,6 +93,16 @@
                                         <span>{{$message}}</span><br>
                                         @enderror
                                    </div>
+                                   {{-- <div class="form-field col-lg-6 ">
+                                        <label class="label" for="pcat">Product Category</label>
+                                        <select name="pcat" value="{{old('pcat')}}"> 
+                                             foreach() 
+                                             <option value = "BMW"> BMW   
+                                             </option>  
+                                              
+                                              
+                                             </select> 
+                                   </div> --}}
 
 
                                <div class="form-field col-lg-6">
