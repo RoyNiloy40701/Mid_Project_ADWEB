@@ -50,6 +50,7 @@ Route::get('/product/add',[ProductController::class,'add'])->name('product.add')
 Route::get('/product/details/{id}',[ProductController::class,'details'])->name('product.details')->middleware('validManager');
 Route::get('/product/edit/{id}',[ProductController::class,'edit'])->name('product.edit')->middleware('validManager');
 
+
 //product route post
 Route::post('/product/add',[ProductController::class,'productAddSubmit'])->name('product.add')->middleware('validManager');
 Route::post('/product/edit',[ProductController::class,'productEditSubmit'])->name('product.update')->middleware('validManager');
@@ -85,3 +86,7 @@ Route::get('/pdf/product/convert/',[PDFController::class,'pdfProductGenerate'])-
 Route::get('/pdf/orderdetails/convert/{id}',[PDFController::class,'pdfOrderGenerate'])->name('orderDetails.pdf')->middleware('validManager');
 
 
+//manager profile
+
+Route::get('/myProfile/',[PagesController::class,'myProfile'])->name('myProfile.view')->middleware('validManager');
+// Route::post('/myProfile',[PagesController::class,'myProfileEditSubmit'])->name('myProfile')->middleware('validManager');

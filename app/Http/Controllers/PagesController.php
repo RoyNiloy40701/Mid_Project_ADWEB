@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Manager;
 
+
 class PagesController extends Controller
 {
     //
@@ -36,15 +37,16 @@ class PagesController extends Controller
        
         $empo = Manager::where('MEMAIL', $req->cusemail)->first();
        
-     
-       
         if($empo){
             $req->session()->put('mname', $empo->MNAME ,'mid',$empo->MID);
+            // $req->session()->put('mname', $empo->MNAME);
             
             return redirect()->route('manager');
         }
 
     }
+
+
     public function logout(){
         session()->forget('mname');
         return view('home.login');
@@ -52,5 +54,22 @@ class PagesController extends Controller
     public function registration(){
         return view('home.registration');
       
+    }
+
+    public function myProfile(){
+        $name = Session()->get('mname');
+      
+       // $empo = Manager::where('MNAME', $name)->first();
+        
+
+        return view('manager.myProfile');
+       
+     
+    }
+    public function myProfileEditSubmit(Request $request){
+      
+
+        return view('home.registration');
+
     }
 }

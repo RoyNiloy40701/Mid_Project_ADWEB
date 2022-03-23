@@ -12,6 +12,7 @@ class ProductController extends Controller
         $products=Product::all();
         return view('product.list')->with ('products',$products);  
     }
+   
 
     public function add(){
         return view('product.add');
@@ -43,12 +44,16 @@ class ProductController extends Controller
         
              ]
              );
+      
+           
              //end validation
             $pd=new Product();
             $pd->PNAME = $req->pname;
             $pd->PSHOP= $req->pshop ;
             $pd->PDESCRIPTION = $req->pdescription;
             $pd->PBPRICE = $req->pbprice;
+            $pd->MID= Session()->get('mid');
+          
             $pd->PSTOCK = $req->pstock;
             if($req->hasfile('pimage')){
                 $file=$req->file('pimage');

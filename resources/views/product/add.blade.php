@@ -65,6 +65,7 @@
                                         <span>{{$message}}</span><br>
                                         @enderror
                                    </div>
+                               
                                    <div class="form-field col-lg-6 ">
                                         <label class="label" for="pdescription">Product Description</label>
                                         <input name="pdescription" value="{{old('pdescription')}}"
