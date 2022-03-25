@@ -87,9 +87,6 @@ class EmployeeController extends Controller
 
     public function employeeEditSubmit(Request $req){
         
-       
-        
-     
         $em = Employee::where('EID',decrypt($req->id))->first();
         $em->ENAME = $req->ename;
         $em->EEMAIL= $req->eemail ;

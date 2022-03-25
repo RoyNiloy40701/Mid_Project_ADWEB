@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Category;
 
 class ProductController extends Controller
 {
@@ -15,7 +16,8 @@ class ProductController extends Controller
    
 
     public function add(){
-        return view('product.add');
+        $cat=Category::all(); 
+        return view('product.add')->with ('cat',$cat);  ;
     }
 
     public function productAddSubmit(Request $req){
@@ -27,7 +29,9 @@ class ProductController extends Controller
                 'pdescription'=>'required',
                 'pbprice'=>'required',
                 'pstock'=>'required',
-                'pimage'=>'required'
+                'pimage'=>'required',
+                'pcategory'=>'required'
+             
             ],
              [
                     'pname.required'=>'Please provide Product name',
@@ -36,6 +40,7 @@ class ProductController extends Controller
                     'pbprice.required'=>'Please provide Basic Price',
                     'pstock.required'=>'Please provide Product Stock',
                     'pimage.required'=>'Please provide Product image',
+                    'pcategory.required'=>'Please provide Product category',
 
                     // 'uname.max'=>'Username should not exceed 15 characters',
                     // 'uname.min'=>'Username should contain at least 5 characters',
@@ -45,16 +50,17 @@ class ProductController extends Controller
              ]
              );
       
-           
+         
              //end validation
             $pd=new Product();
             $pd->PNAME = $req->pname;
             $pd->PSHOP= $req->pshop ;
             $pd->PDESCRIPTION = $req->pdescription;
             $pd->PBPRICE = $req->pbprice;
+            $pd->PCATEGORYID =  $req->pcategory;
             $pd->MID= Session()->get('mid');
-          
             $pd->PSTOCK = $req->pstock;
+          
             if($req->hasfile('pimage')){
                 $file=$req->file('pimage');
                 $extension=$file->getClientOriginalExtension();
@@ -63,9 +69,7 @@ class ProductController extends Controller
                 $pd->PPICTURE = $filename;
 
             }
-
             $pd->save();
-
             return redirect()->route('product.list');
 
      
@@ -81,19 +85,19 @@ class ProductController extends Controller
        
    
     }
-    public function get(Request $req){
-        $course = Course::where('id',$req->id)->first();
-        if($course){
-            $course->department = $course->department;
-            return response()->json($course,200);
-        }
-        return response()->json(["msg"=>"notfound"],404);
-        
-    }
+  
 
     public function edit(Request $req){
         $pd = Product::where('PID',decrypt($req->id))->first();
-        return view('product.edit')->with('pd',$pd);
+        
+         
+            $cat=Category::all(); 
+       
+            return view('product.edit')->with('pd',$pd)->with('cat',$cat);
+        
+        // $cat=Category::all(); 
+        // return $pd->PCATEGORyNAME;
+        // return view('product.edit')->with('pd',$pd)->with('cat',$cat);
     }
 
 
@@ -101,13 +105,14 @@ class ProductController extends Controller
        
        
             $pd = Product::where('PID',decrypt($req->id))->first();
-           
+  
        
             $pd->PNAME = $req->pname;
             $pd->PSHOP= $req->pshop ;
             $pd->PDESCRIPTION = $req->pdescription;
             $pd->PBPRICE =$req->pbprice;
             $pd->PSTOCK = $req->pstock;
+            $pd->PCATEGORYID =  $req->pcategory;
             
             $pd->MID= Session()->get('mid');
           
@@ -129,6 +134,12 @@ class ProductController extends Controller
         $pd = Product::where('PID',decrypt($req->id))->delete();
           return redirect()->route('product.list');
 
+    }
+
+    public function CategoryList(){
+        $categorys=Category::all();
+        return view('category.list')->with ('categorys',$categorys);  
+       
     }
   
 }

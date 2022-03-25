@@ -43,10 +43,10 @@
                          <section class="get-in-touch">
                               {{-- {{route('product.edit',['id'=>encrypt($pd->PID)])}} --}}
 
-                              <form action="  {{route('product.update',['id'=>encrypt($pd->PID)])}}"  method="post"
+                              <form action="  {{route('product.update',['id'=>encrypt($pd->PID)])}}" method="post"
                                    class="contact-form row" enctype="multipart/form-data">
                                    {{@csrf_field()}}
-                               
+
 
                                    {{-- <input type="text" name = 'productId' value={{ $pd->PID }}> --}}
                                    <div class="form-field col-lg-6">
@@ -85,8 +85,20 @@
 
 
                                    </div>
+                                   <div class="form-field col-lg-6 ">
+                                        <label class="label" " for=" pcategory">Product Category</label>
+                                        <select class="input-text js-input form-control-file" name="pcategory">
+                                             @foreach($cat as $c)
+                                             <option value={{$c->CATEGORYID}}
+                                                  {{$c->CATEGORYID==$pd->PCATEGORYID ? 'selected' : '' }}>{{$c->CATEGORYNAME}}
+                                             </option>
+                                             @endforeach
+                                        </select>
 
-                                   <div class="form-field col-lg-6">
+
+                                   </div>
+
+                                   <div class="form-field col-lg-12">
                                         <label class="image-label" for="pimage">Image</label>
                                         <input name="pimage" value="{{$pd->PPICTURE}}"
                                              class="input-text js-input form-control-file" type="file">

@@ -85,6 +85,7 @@
                                         <span>{{$message}}</span><br>
                                         @enderror
                                    </div>
+
                                    <div class="form-field col-lg-6 ">
                                         <label class="label" for="pstock">Product Stock</label>
                                         <input name="pstock" value="{{old('pstock')}}" class="input-text js-input"
@@ -94,36 +95,42 @@
                                         <span>{{$message}}</span><br>
                                         @enderror
                                    </div>
-                                   {{-- <div class="form-field col-lg-6 ">
-                                        <label class="label" for="pcat">Product Category</label>
-                                        <select name="pcat" value="{{old('pcat')}}">
-                                   foreach()
-                                   <option value="BMW"> BMW
-                                   </option>
 
 
-                                   </select>
-                    </div> --}}
+                                   <div class="form-field col-lg-6 ">
+                                        <label class="label" " for=" pcategory">Product Category</label>
+                                        <select value="{{old('pcategory')}}"
+                                             class="input-text js-input form-control-file" name="pcategory">
+                                            
+                                             @foreach($cat as $c)
+                                               <option value={{$c->CATEGORYID}}>{{$c->CATEGORYNAME}}</option>
+                                             @endforeach
+                                        </select>
+
+                                        @error('pcategory')
+                                        <span>{{$message}}</span><br>
+                                        @enderror
+                                   </div>
 
 
-                    <div class="form-field col-lg-6">
-                         <label class="image-label" for="pimage">Image</label>
-                         <input name="pimage" class="input-text js-input form-control-file" type="file">
-                         @error('pimage')
-                         <span>{{$message}}</span><br>
-                         @enderror
+                                   <div class="form-field col-lg-6">
+                                        <label class="image-label" for="pimage">Image</label>
+                                        <input name="pimage" class="input-text js-input form-control-file" type="file">
+                                        @error('pimage')
+                                        <span>{{$message}}</span><br>
+                                        @enderror
+                                   </div>
+
+                                   <div class="form-field  col-lg-12 mb-3">
+                                        <input class="submit-btn" type="submit" value="Submit">
+                                   </div>
+
+                              </form>
+                         </section>
+
                     </div>
-
-                    <div class="form-field  col-lg-12 mb-3">
-                         <input class="submit-btn" type="submit" value="Submit">
-                    </div>
-
-                    </form>
-                    </section>
 
                </div>
-
-          </div>
 
           </div>
      </body>
