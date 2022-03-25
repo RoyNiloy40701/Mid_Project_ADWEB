@@ -43,9 +43,10 @@
                          <section class="get-in-touch">
                               {{-- {{route('product.edit',['id'=>encrypt($pd->PID)])}} --}}
 
-                              <form action="  {{route('product.update',['id'=>encrypt($pd->PID)])}}" method="post"
-                                   class="contact-form row">
+                              <form action="  {{route('product.update',['id'=>encrypt($pd->PID)])}}"  method="post"
+                                   class="contact-form row" enctype="multipart/form-data">
                                    {{@csrf_field()}}
+                               
 
                                    {{-- <input type="text" name = 'productId' value={{ $pd->PID }}> --}}
                                    <div class="form-field col-lg-6">

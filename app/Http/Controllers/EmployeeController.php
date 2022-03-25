@@ -89,7 +89,7 @@ class EmployeeController extends Controller
         
        
         
-         //end validation
+     
         $em = Employee::where('EID',decrypt($req->id))->first();
         $em->ENAME = $req->ename;
         $em->EEMAIL= $req->eemail ;
@@ -98,6 +98,15 @@ class EmployeeController extends Controller
         $em->ESALARY = $req->esalary;
         $em->EADDRESS = $req->eaddress;
         $em->ESCHEDULE = $req->eschedule;
+        if($req->hasfile('eimage')){
+            $file=$req->file('eimage');
+            $extension=$file->getClientOriginalExtension();
+            $filename=time().'.'. $extension;
+            $file->move('uploads/employees/',$filename);
+            $em->EPICTURE = $filename;
+
+        }
+        $em->save();
         $em->save();
 
         return redirect()->route('employee.list');

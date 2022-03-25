@@ -44,7 +44,7 @@
                               {{-- {{route('product.edit',['id'=>encrypt($em->PID)])}} --}}
 
                               <form action="  {{route('employee.update',['id'=>encrypt($em->EID)])}}" method="post"
-                                   class="contact-form row">
+                                   enctype="multipart/form-data" class="contact-form row">
                                    {{@csrf_field()}}
 
 
