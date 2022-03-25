@@ -106,9 +106,6 @@
                                         <img src="{{ asset('uploads/products/'.$pd->PPICTURE)}}" class="avatar" alt="">
                                    </div>
 
-
-
-
                                    <div class="form-field  col-lg-12 mb-3">
                                         <input class="submit-btn" type="submit" value="Submit">
                                    </div>
