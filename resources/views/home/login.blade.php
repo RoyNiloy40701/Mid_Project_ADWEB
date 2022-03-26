@@ -5,6 +5,7 @@
 
 </head>
 
+<body>
 
 <div class="section">
 	<div class="container">
@@ -13,8 +14,8 @@
 				<div class="section pb-5 pt-5 pt-sm-2 text-center">
 					<h6 class="mb-0 pb-3">
 						<h2>Login</h2>
-					</h6>
-
+					</h6> 
+					
 					<div class="card-3d-wrap mx-auto">
 						<div class="card-3d-wrapper">
 							<div class="card-front">
@@ -143,3 +144,5 @@
 		</div>
 	</div>
 </div>
+@include('sweetalert::alert')
+</body>

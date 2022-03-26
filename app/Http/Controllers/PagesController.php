@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Manager;
+Use Alert;
 
 
 class PagesController extends Controller
@@ -36,18 +37,24 @@ class PagesController extends Controller
     
          ]
          );
-    
         $empo = Manager::where('MEMAIL',$req->cusemail)
         ->where('MPASSWORD',md5($req->cuspass))
         ->first();
      
+       
+    
         if($empo){
            // $req->session()->put('mid',$empo->MID,'mname',$empo->MNAME,);
              $req->session()->put('mname', $empo->MNAME);
              $req->session()->put('mid', $empo->MID);
-            
+             Alert::success('Login Successfully', 'Welcome to your dashboard');
             return redirect()->route('manager');
         }
+        Alert::error('Login Failed', 'Check email or password');
+        return redirect()->route('login');
+
+          
+        
 
     }
 

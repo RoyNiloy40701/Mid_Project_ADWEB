@@ -1,4 +1,10 @@
 @extends('layouts.app')
+
 @section('content')
-<h1>Happy admin</h2>
-@endsection
+<body>
+     @include('sweetalert::alert')
+     <h1>Happy admin</h2>
+
+</body>
+
+     @endsection

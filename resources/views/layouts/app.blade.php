@@ -15,6 +15,7 @@
      </head>
 
      <body>
+     
 
           <div class="row ps-2">
                <div class="col-4 d-flex  flex-column vh-100 flex-shrink-0 p-3 text-white bg-dark" style="width: 250px;">
@@ -42,13 +43,15 @@
                     <hr>
                     <div class="dropdown"> <a href="{{route('myProfile.view')}}"
                               class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" " data-bs-toggle="
-                              dropdown" aria-expanded="false"> <img src="https://github.com/mdo.png" alt="https://github.com/mdo.png" width="32"
-                                   height="32" class="rounded-circle me-2"> <strong>{{Session()->get('mname')}}
+                              dropdown" aria-expanded="false"> <img src="https://github.com/mdo.png"
+                                   alt="https://github.com/mdo.png" width="32" height="32" class="rounded-circle me-2">
+                              <strong>{{Session()->get('mname')}}
                               </strong> </a>
-                              {{-- //"{{asset('uploads/managers/'.$man->MPICTURE)}}" --}}
+                         {{-- //"{{asset('uploads/managers/'.$man->MPICTURE)}}" --}}
                     </div>
                     <a href="{{route('logout')}}" class="nav-link text-white"> <i class="fa fa-sign-out"
                               aria-hidden="true"></i><span class="ms-2">Sign Out</span> </a>
+
                </div>
 
 
@@ -60,6 +63,8 @@
           </div>
 
 
+
+        
      </body>
 
 
