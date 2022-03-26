@@ -81,6 +81,7 @@ class EmployeeController extends Controller
 
     public function edit(Request $req){
         $em = Employee::where('EID',decrypt($req->id))->first();
+        
         return view('employee.edit')->with('em',$em);
     }
 
@@ -104,8 +105,7 @@ class EmployeeController extends Controller
 
         }
         $em->save();
-        $em->save();
-
+       
         return redirect()->route('employee.list');
 
  

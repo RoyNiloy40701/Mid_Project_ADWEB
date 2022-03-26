@@ -20,7 +20,7 @@
 							<div class="card-front">
 								<div class="center-wrap">
 									<div class="section text-center">
-										<form action="{{route('login')}}" method="POST"
+										<form action="{{route('login')}}" method="post"
 											enctype="multipart/form-data">
 											{{@csrf_field()}}
 											<h4 class="mb-4 pb-3">Log In</h4>

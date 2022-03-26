@@ -34,11 +34,13 @@ class PagesController extends Controller
     
          ]
          );
-       
-        $empo = Manager::where('MEMAIL', $req->cusemail)->first();
+    
+        $empo = Manager::where('MEMAIL',$req->cusemail)->first();
+     
+        
        
         if($empo){
-            $req->session()->put('mname', $empo->MNAME ,'mid',$empo->MID);
+            $req->session()->put('mid',$empo->MID,'mname',$empo->MNAME);
             // $req->session()->put('mname', $empo->MNAME);
             
             return redirect()->route('manager');
@@ -56,20 +58,7 @@ class PagesController extends Controller
       
     }
 
-    public function myProfile(){
-        $name = Session()->get('mname');
-      
-       // $empo = Manager::where('MNAME', $name)->first();
-        
-
-        return view('manager.myProfile');
-       
-     
-    }
-    public function myProfileEditSubmit(Request $request){
-      
-
-        return view('home.registration');
-
-    }
+  
+   
+   
 }

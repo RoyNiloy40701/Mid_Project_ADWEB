@@ -89,5 +89,7 @@ Route::get('/pdf/orderdetails/convert/{id}',[PDFController::class,'pdfOrderGener
 
 //manager profile
 
-Route::get('/myProfile/',[PagesController::class,'myProfile'])->name('myProfile.view')->middleware('validManager');
-// Route::post('/myProfile',[PagesController::class,'myProfileEditSubmit'])->name('myProfile')->middleware('validManager');
+Route::get('/myProfile/',[ManagerController::class,'myProfile'])->name('myProfile.view')->middleware('validManager');
+//Route::post('/myProfile',[PagesController::class,'myProfileEditSubmit'])->name('myProfile')->middleware('validManager');
+Route::post('/profile/edit/{id}',[ManagerController::class,'managerProfileEditSubmit'])->name('managerProfile.update')->middleware('validManager');
+Route::get('/profile/edit/{id}',[ManagerController::class,'managerProfileEdit'])->name('managerProfile.edit')->middleware('validManager');

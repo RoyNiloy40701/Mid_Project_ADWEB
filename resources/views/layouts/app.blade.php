@@ -40,7 +40,7 @@
                                         class="fa fa-bookmark"></i><span class="ms-2">Order</span> </a> </li>
                     </ul>
                     <hr>
-                    <div class="dropdown"> <a href="#"
+                    <div class="dropdown"> <a href="{{route('myProfile.view')}}"
                               class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" " data-bs-toggle="
                               dropdown" aria-expanded="false"> <img src="https://github.com/mdo.png" alt="" width="32"
                                    height="32" class="rounded-circle me-2"> <strong>{{Session()->get('mname')}}
