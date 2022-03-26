@@ -69,7 +69,7 @@ Route::get('/category/delete/{id}',[CategoryController::class,'delete'])->name('
 Route::get('/category/details/{id}',[CategoryController::class,'details'])->name('category.details')->middleware('validManager');
 
 //custromer route
-Route::post('/customer/reg',[CustomerController::class,'registration'])->name('customer.reg')->middleware('validManager');
+Route::post('/customer/reg',[CustomerController::class,'registration'])->name('customer.reg');
 Route::get('/customer/list',[CustomerController::class,'list'])->name('customer.list')->middleware('validManager');
 Route::get('/customer/details/{id}',[CustomerController::class,'details'])->name('customer.details')->middleware('validManager');
 Route::get('/customer/orderDetails/{id}',[CustomerController::class,'orderDetails'])->name('customer.orderDetails')->middleware('validManager');

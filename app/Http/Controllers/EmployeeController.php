@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Employee;
 use Illuminate\Http\Request;
+Use Alert;
 
 class EmployeeController extends Controller
 {
@@ -73,6 +74,7 @@ class EmployeeController extends Controller
 
         }
         $em->save();
+        Alert::success('Added', 'Employee add successfully');
 
         return redirect()->route('employee.list');
 
@@ -105,6 +107,7 @@ class EmployeeController extends Controller
 
         }
         $em->save();
+        Alert::success('Updated', 'Employee update successfully');
        
         return redirect()->route('employee.list');
 
@@ -114,6 +117,7 @@ class EmployeeController extends Controller
 
     public function delete(Request $req){
         $em = Employee::where('EID',decrypt($req->id))->delete();
+        Alert::success('Deleted', 'Employee delete successfully');
           return redirect()->route('employee.list');
 
     }

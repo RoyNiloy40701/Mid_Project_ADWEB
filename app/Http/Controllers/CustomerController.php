@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use  App\Models\Customer;
 use Illuminate\Http\Request;
+Use Alert;
 
 class CustomerController extends Controller
 {
@@ -21,6 +22,7 @@ class CustomerController extends Controller
 
     public function delete(Request $req){
         $pd = Customer::where('CID',decrypt($req->id))->delete();
+        Alert::success('Deleted', 'Customer delete successfully');
           return redirect()->route('customer.list');
 
     }
@@ -79,8 +81,9 @@ class CustomerController extends Controller
                 $pd->CPICTURE = $filename;
 
             }
-
+           
             $pd->save();
+            Alert::success('Registration', 'Registration successfully');
 
             return redirect()->route('login');
 

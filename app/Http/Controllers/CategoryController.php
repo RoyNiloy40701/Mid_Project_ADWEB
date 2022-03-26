@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Category;
 use Illuminate\Http\Request;
-
+Use Alert;
 
 class CategoryController extends Controller
 {
@@ -41,7 +41,7 @@ class CategoryController extends Controller
         $ca->CATEGORYNAME = $req->cname;
        
         $ca->save();
-
+        Alert::success('Added', 'Category add successfully');
         return redirect()->route('category.list');
 
  
@@ -61,7 +61,7 @@ class CategoryController extends Controller
         $ca = Category::where('CATEGORYID',decrypt($req->id))->first();
         $ca->CATEGORYNAME = $req->cname;
         $ca->save();
-
+        Alert::success('Updated', 'Category update successfully');
         return redirect()->route('category.list');
 
  
@@ -85,6 +85,7 @@ class CategoryController extends Controller
     
     public function delete(Request $req){
         $em = Category::where('CATEGORYID',decrypt($req->id))->delete();
+         Alert::success('Deleted', 'Category delete successfully');
           return redirect()->route('category.list');
 
     }

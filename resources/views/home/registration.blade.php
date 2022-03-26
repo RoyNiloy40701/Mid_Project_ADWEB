@@ -4,7 +4,7 @@
      <link href="{{ asset('css/home/reg.css') }}" rel="stylesheet" />
 
 </head>
-
+<body>
 
 <div class="section">
      <div class="container">
@@ -19,7 +19,7 @@
                                         <div class="center-wrap">
                                              <div class="section text-center">
 
-                                                  <form action="{{route('customer.reg')}}" method="POST"
+                                                  <form action="{{route('customer.reg')}}" method="post"
                                                        enctype="multipart/form-data">
                                                        {{@csrf_field()}}
                                                        <div class="form-group">
@@ -87,18 +87,14 @@
                                                        </div>
                                                        {{-- <a href="#" class="btn mt-4">submit</a> --}}
                                                        <div class="">
-                                                            <input class="btn mt-4" type="submit" value="Submit">
+                                                            <input class="btn mt-4 mb-1" type="submit" value="Submit">
                                                        </div>
+                                                       <a href="{{route('login')}}"
+													class="mb-0 mt-4 text-center link text-decoration-none">Login</a>
                                                   </form>
                                              </div>
                                         </div>
                                    </div>
-
-
-
-
-
-
 
 
                               </div>
@@ -112,3 +108,6 @@
 </div>
 </div>
 </div>
+@include('sweetalert::alert')
+        
+</body>

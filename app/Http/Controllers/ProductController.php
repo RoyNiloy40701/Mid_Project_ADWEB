@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
+Use Alert;
 
 class ProductController extends Controller
 {
@@ -70,6 +71,7 @@ class ProductController extends Controller
 
             }
             $pd->save();
+            Alert::success('Added', 'Product add successfully');
             return redirect()->route('product.list');
 
      
@@ -126,12 +128,14 @@ class ProductController extends Controller
 
             }
             $pd->save();
+            Alert::success('Updated', 'Product update successfully');
             return redirect()->route('product.list');
 
      
     }
     public function delete(Request $req){
         $pd = Product::where('PID',decrypt($req->id))->delete();
+        Alert::success('Deleted', 'Product delete successfully');
           return redirect()->route('product.list');
 
     }

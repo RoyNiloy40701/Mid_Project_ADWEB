@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Manager;
+Use Alert;
 
 class ManagerController extends Controller
 {
@@ -38,8 +39,8 @@ class ManagerController extends Controller
 
         }
         $man->save();
+        Alert::success('Updated', 'Profile successfully');
      
-
         return redirect()->route('myProfile.view');
     
 
