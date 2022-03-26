@@ -11,8 +11,10 @@ class ProductController extends Controller
 {
     //
     public function list(){
+
         $products=Product::all();
-        return view('product.list')->with ('products',$products);  
+         return view('product.list')->with ('products',$products);  
+           
     }
    
 
@@ -81,6 +83,7 @@ class ProductController extends Controller
         $pd = Product::where('PID',decrypt($req->id))->first();
         if($pd){
             $pd->category = $pd->category; 
+           
        
             return view('product.details')->with('pd',$pd);  
         }

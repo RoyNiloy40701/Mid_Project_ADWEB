@@ -15,7 +15,7 @@
      </head>
 
      <body>
-     
+
 
           <div class="row ps-2">
                <div class="col-4 d-flex  flex-column vh-100 flex-shrink-0 p-3 text-white bg-dark" style="width: 250px;">
@@ -64,7 +64,7 @@
 
 
           @include('sweetalert::alert')
-        
+
      </body>
 
 

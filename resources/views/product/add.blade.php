@@ -101,9 +101,9 @@
                                         <label class="label" " for=" pcategory">Product Category</label>
                                         <select value="{{old('pcategory')}}"
                                              class="input-text js-input form-control-file" name="pcategory">
-                                            
+
                                              @foreach($cat as $c)
-                                               <option value={{$c->CATEGORYID}}>{{$c->CATEGORYNAME}}</option>
+                                             <option value={{$c->CATEGORYID}}>{{$c->CATEGORYNAME}}</option>
                                              @endforeach
                                         </select>
 

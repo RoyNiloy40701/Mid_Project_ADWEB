@@ -43,8 +43,8 @@
                          <section class="get-in-touch">
                               {{-- {{route('product.edit',['id'=>encrypt($man->PID)])}} --}}
 
-                              <form action="  {{route('managerProfile.update',['id'=>encrypt($man->MID)])}}" method="post"
-                                   enctype="multipart/form-data" class="contact-form row">
+                              <form action="  {{route('managerProfile.update',['id'=>encrypt($man->MID)])}}"
+                                   method="post" enctype="multipart/form-data" class="contact-form row">
                                    {{@csrf_field()}}
 
 
@@ -56,7 +56,7 @@
 
 
 
-                                        
+
                                    <div class="form-field col-lg-6">
                                         <label class="label" for="epassword"> Password</label>
                                         <input name="epassword" value="{{$man->MPASSWORD}}" class="input-text js-input"
@@ -85,8 +85,8 @@
 
 
                                    </div>
-                                 
-                                 
+
+
                                    <div class="form-field col-lg-6">
                                         <label class="image-label" for="eimage">Image</label>
                                         <input name="eimage" value="{{$man->MPICTURE}}"

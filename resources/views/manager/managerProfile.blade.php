@@ -39,7 +39,7 @@
                                                   <div class="d-flex flex-column align-items-center text-center">
                                                        <img src="{{asset('uploads/managers/'.$man->MPICTURE)}}"
                                                             alt="Admin" class="rounded-circle" width="150">
-                                                           
+
                                                        <div class="mt-3">
                                                             <h4>{{$man->MNAME}}</h4>
                                                             <p class="text-secondary mb-1">Manager</p>

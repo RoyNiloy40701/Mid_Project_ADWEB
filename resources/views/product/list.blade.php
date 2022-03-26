@@ -59,7 +59,7 @@
                                         <td><a href="{{route('product.details',['id'=>encrypt($pd->PID)])}}"><img
                                                        src="{{ asset('uploads/products/'.$pd->PPICTURE)}}"
                                                        class="avatar" alt="Avatar">{{$pd->PNAME}}</a></td>
-                                        <td>04/10/2013</td>
+                                        <td>{{$pd->PCATEGORYID}}</td>
                                         <td>{{$pd->PSHOP}}</td>
                                         <td>{{$pd->PBPRICE}}</td>
                                         <td>{{$pd->PSTOCK}}</td>

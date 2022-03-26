@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Order;
+use Alert;
 class OrderController extends Controller
 {
     //
@@ -22,5 +23,11 @@ class OrderController extends Controller
               
         }
      
+    }
+    public function delete(Request $req){
+        $od = Order::where('OID',decrypt($req->id))->delete();
+        Alert::success('Deleted', 'Order delete successfully');
+        return redirect()->route('order.list');
+
     }
 }

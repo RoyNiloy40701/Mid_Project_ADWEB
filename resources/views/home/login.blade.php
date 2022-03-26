@@ -44,7 +44,8 @@
 												</div>
 
 												<div class="">
-													<input class="btn mt-4 mb-4" type="submit" value="Submit">
+													<input class="btn mt-4 mb-4" type="submit"
+														value="Submit">
 												</div>
 
 												<a href="{{route('registration')}}"
