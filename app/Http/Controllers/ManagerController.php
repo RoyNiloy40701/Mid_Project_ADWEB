@@ -20,11 +20,12 @@ class ManagerController extends Controller
        
      
     }
+
     public function managerProfileEditSubmit(Request $req){
         $man = Manager::where('MID',decrypt($req->id))->first();
         $man->MNAME = $req->ename;
         $man->MEMAIL= $req->eemail ;
-        $man->MPASSWORD = $req->epassword;
+        $man->MPASSWORD = md5($req->epassword);
         $man->MPHONE = $req->ephone;
         $man->MADDRESS = $req->eaddress;
       

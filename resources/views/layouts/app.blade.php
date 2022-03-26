@@ -42,9 +42,10 @@
                     <hr>
                     <div class="dropdown"> <a href="{{route('myProfile.view')}}"
                               class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" " data-bs-toggle="
-                              dropdown" aria-expanded="false"> <img src="https://github.com/mdo.png" alt="" width="32"
+                              dropdown" aria-expanded="false"> <img src="https://github.com/mdo.png" alt="https://github.com/mdo.png" width="32"
                                    height="32" class="rounded-circle me-2"> <strong>{{Session()->get('mname')}}
                               </strong> </a>
+                              {{-- //"{{asset('uploads/managers/'.$man->MPICTURE)}}" --}}
                     </div>
                     <a href="{{route('logout')}}" class="nav-link text-white"> <i class="fa fa-sign-out"
                               aria-hidden="true"></i><span class="ms-2">Sign Out</span> </a>

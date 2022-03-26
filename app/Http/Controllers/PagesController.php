@@ -13,7 +13,9 @@ class PagesController extends Controller
     public function login(){
         return view('home.login');
       
+    
     }
+
     public function loginSubmit(Request $req){
         $this->validate($req ,
         [
@@ -35,13 +37,14 @@ class PagesController extends Controller
          ]
          );
     
-        $empo = Manager::where('MEMAIL',$req->cusemail)->first();
+        $empo = Manager::where('MEMAIL',$req->cusemail)
+        ->where('MPASSWORD',md5($req->cuspass))
+        ->first();
      
-        
-       
         if($empo){
-            $req->session()->put('mid',$empo->MID,'mname',$empo->MNAME);
-            // $req->session()->put('mname', $empo->MNAME);
+           // $req->session()->put('mid',$empo->MID,'mname',$empo->MNAME,);
+             $req->session()->put('mname', $empo->MNAME);
+             $req->session()->put('mid', $empo->MID);
             
             return redirect()->route('manager');
         }

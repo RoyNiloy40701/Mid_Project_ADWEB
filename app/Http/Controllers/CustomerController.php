@@ -68,7 +68,7 @@ class CustomerController extends Controller
             $pd=new Customer();
             $pd->CNAME = $req->cusname;
             $pd->CEMAIL= $req->cusemail ;
-            $pd->CPASSWORD = $req->cuspass;
+            $pd->CPASSWORD = md5($req->cuspass);
             $pd->CADDRESS = $req->cusaddress;
             $pd->CPHONE = $req->cusphone;
             if($req->hasfile('cusimage')){

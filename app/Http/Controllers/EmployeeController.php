@@ -59,7 +59,7 @@ class EmployeeController extends Controller
         $em=new Employee();
         $em->ENAME = $req->ename;
         $em->EEMAIL= $req->eemail ;
-        $em->EPASSWORD = $req->epassword;
+        $em->EPASSWORD = md5($req->epassword);
         $em->EPHONE = $req->ephone;
         $em->ESALARY = $req->esalary;
         $em->EADDRESS = $req->eaddress;
@@ -91,7 +91,7 @@ class EmployeeController extends Controller
         $em = Employee::where('EID',decrypt($req->id))->first();
         $em->ENAME = $req->ename;
         $em->EEMAIL= $req->eemail ;
-        $em->EPASSWORD = $req->epassword;
+        $em->EPASSWORD = md5($req->epassword);
         $em->EPHONE = $req->ephone;
         $em->ESALARY = $req->esalary;
         $em->EADDRESS = $req->eaddress;
